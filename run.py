@@ -122,10 +122,13 @@ async def serve_data_viewer(request: Request):
     )
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", settings.PORT))
+    host = os.environ.get("HOST", settings.HOST)
     uvicorn.run(
         "run:app",
-        host=settings.HOST,
-        port=settings.PORT,
+        host=host,
+        port=port,
         reload=False,
         log_level="info"
     )
+

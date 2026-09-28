@@ -1,0 +1,26 @@
+# =========================================================================
+# Render.com Blueprint Specification for Air Compressor Management (SCADA)
+# =========================================================================
+# To deploy: Link this repository in Render and create a Blueprint instance,
+# or create a Web Service using the build and start commands below.
+
+services:
+  - type: web
+    name: comp-render
+    runtime: python
+    plan: free
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: uvicorn run:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/plc/status
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DB_TYPE
+        value: sqlite
+      - key: PLC_ENABLED
+        value: "false"
+      - key: LLM_FALLBACK_TO_HEURISTIC
+        value: "true"
+      - key: APP_NAME
+        value: "Air Compressor Management"

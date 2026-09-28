@@ -135,5 +135,19 @@ OLLAMA_MODEL=llama3.2
 
 ---
 
+## ☁️ Deploy to Render.com
+
+You can run this full industrial SCADA dashboard, OEE engine, and AI diagnostics application on **[Render.com](https://render.com)** in under 2 minutes:
+
+1. **Push your repository** to GitHub.
+2. In Render, click **New +** $\rightarrow$ **Blueprint** and select this repository.
+3. Render automatically detects [`render.yaml`](render.yaml) and configures the web service, live WebSockets, SQLite database, and health check.
+4. Click **Apply** to deploy!
+
+👉 For complete step-by-step instructions, environment variable options, and Docker deployment, see **[RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md)**.
+
+---
+
 ## 📄 License
 MIT License.
+

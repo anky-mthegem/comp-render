@@ -22,7 +22,7 @@ class Settings(BaseSettings):
     TIMEZONE_LABEL: str = "IST (UTC+05:30)"
 
     # Database Configuration (MSSQL + Auto SQLite Fallback)
-    DB_TYPE: str = "mssql"  # "mssql" or "sqlite"
+    DB_TYPE: str = "sqlite" if os.environ.get("RENDER") else "mssql"  # "mssql" or "sqlite"
     MSSQL_SERVER: str = "localhost"
     MSSQL_DATABASE: str = "CompressorDB"
     MSSQL_USERNAME: str = ""

@@ -17,6 +17,8 @@ def create_db_engine():
     """
     if settings.DB_TYPE.lower() == "mssql":
         try:
+            # Check if pyodbc is installed
+            import pyodbc  # noqa: F401
             logger.info(f"Attempting connection to MSSQL Server [{settings.MSSQL_SERVER}], Database [{settings.MSSQL_DATABASE}]...")
             if settings.MSSQL_TRUSTED_CONNECTION:
                 odbc_str = (
@@ -48,6 +50,8 @@ def create_db_engine():
                 conn.execute(text("SELECT 1"))
             logger.info("Successfully connected to MS SQL Server!")
             return test_engine, "MSSQL"
+        except (ImportError, ModuleNotFoundError):
+            logger.warning("pyodbc is not installed in this environment. Falling back to local SQLite database.")
         except Exception as e:
             logger.warning(f"Could not connect to MSSQL Server ({e}). Falling back to local SQLite database.")
 

@@ -1,0 +1,3 @@
+# Optional dependencies for physical Microsoft SQL Server connection
+-r requirements.txt
+pyodbc>=5.1.0
