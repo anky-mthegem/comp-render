@@ -82,18 +82,6 @@ Under **Advanced**:
 ### Step 5: Click "Create Web Service"
 Render will pull your code, install dependencies, run database migrations, and deploy the application.
 
----
-
-## 🐳 Method 3: Deploy with Docker (Optional)
-
-This repository includes a multi-platform [Dockerfile](file:///Dockerfile) and [.dockerignore](file:///dockerignore).
-
-1. In Render Dashboard, click **"New +"** $\rightarrow$ **"Web Service"**.
-2. Select your repository.
-3. In the **Runtime** dropdown, choose **"Docker"**.
-4. Leave Dockerfile path as `./Dockerfile`.
-5. Add the environment variables listed in Method 2.
-6. Click **"Create Web Service"**.
 
 ---
 

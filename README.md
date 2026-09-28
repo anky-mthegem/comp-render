@@ -144,7 +144,7 @@ You can run this full industrial SCADA dashboard, OEE engine, and AI diagnostics
 3. Render automatically detects [`render.yaml`](render.yaml) and configures the web service, live WebSockets, SQLite database, and health check.
 4. Click **Apply** to deploy!
 
-👉 For complete step-by-step instructions, environment variable options, and Docker deployment, see **[RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md)**.
+👉 For complete step-by-step instructions and environment variable options, see **[RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md)**.
 
 ---
 
